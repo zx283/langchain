@@ -2,6 +2,9 @@
 
 This project is an initial attempt to combine the capabilities of [LangChain](https://github.com/langchain-ai/langchain) and [SGLang](https://github.com/sgl-project/sglang) for enhanced functionality.
 
+## TODO
+Try the HTTP server of sglang. It may be compatible with langchain-openai?
+
 ## Installation
 
 Follow the steps below to set up the environment and install the necessary dependencies:
