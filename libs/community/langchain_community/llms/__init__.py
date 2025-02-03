@@ -610,6 +610,12 @@ def _import_vllm() -> Type[BaseLLM]:
     return VLLM
 
 
+def _import_sglang() -> Type[BaseLLM]:
+    from langchain_community.llms.sglang import Sglang
+
+    return Sglang
+
+
 def _import_vllm_openai() -> Type[BaseLLM]:
     from langchain_community.llms.vllm import VLLMOpenAI
 
@@ -863,6 +869,8 @@ def __getattr__(name: str) -> Any:
         return _import_vertex_model_garden()
     elif name == "VLLM":
         return _import_vllm()
+    elif name == "Sglang":
+        return _import_sglang()
     elif name == "VLLMOpenAI":
         return _import_vllm_openai()
     elif name == "WatsonxLLM":
@@ -986,6 +994,7 @@ __all__ = [
     "Together",
     "Tongyi",
     "VLLM",
+    "Sglang",
     "VLLMOpenAI",
     "VertexAI",
     "VertexAIModelGarden",
@@ -1086,6 +1095,7 @@ def get_type_to_cls_dict() -> Dict[str, Callable[[], Type[BaseLLM]]]:
         "openllm": _import_openllm,
         "outlines": _import_outlines,
         "vllm": _import_vllm,
+        "sglang": _import_sglang,
         "vllm_openai": _import_vllm_openai,
         "watsonxllm": _import_watsonxllm,
         "weight_only_quantization": _import_weight_only_quantization,
